@@ -2,7 +2,9 @@ package org.launchcode.techjobs.console;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+
 
 /**
  * Created by LaunchCode
@@ -72,13 +74,13 @@ public class TechJobs {
     // ﻿Returns the key of the selected item from the choices Dictionary
     private static String getUserSelection(String menuHeader, HashMap<String, String> choices) {
 
-        Integer choiceIdx;
-        Boolean validChoice = false;
+        int choiceIdx;
+        boolean validChoice = false;
         String[] choiceKeys = new String[choices.size()];
 
         // Put the choices in an ordered structure so we can
         // associate an integer with each one
-        Integer i = 0;
+        int i = 0;
         for (String choiceKey : choices.keySet()) {
             choiceKeys[i] = choiceKey;
             i++;
@@ -89,9 +91,8 @@ public class TechJobs {
             System.out.println("\n" + menuHeader);
 
             // Print available choices
-            for (Integer j = 0; j < choiceKeys.length; j++) {
-                System.out.println("" + j + " - " + choices.get(choiceKeys[j]));
-            }
+            int j;
+            for (j = 0; j < choiceKeys.length; j++) System.out.println("" + j + " - " + choices.get(choiceKeys[j]));
 
             choiceIdx = in.nextInt();
             in.nextLine();
@@ -110,7 +111,27 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        for(HashMap<String, String> name : someJobs){
+        System.out.println("*****");
+        for(Map.Entry<String, String> object : name.entrySet()) {
+            String key = object.getKey();
+            String value = object.getValue();
+            System.out.println(key + ":" + value + ".");
+        }
+    }
 
-        System.out.println("printJobs is not implemented yet");
+        if(someJobs.isEmpty())
+
+
+
+    {
+        System.out.println("No matches in the search.");
+    }
+    else
+
+    {
+        System.out.println(("*****"));
+    }
+       // System.out.println("printJobs is not implemented yet");
     }
 }
