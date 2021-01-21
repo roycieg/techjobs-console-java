@@ -31,7 +31,7 @@ public class TechJobs {
         System.out.println("Welcome to LaunchCode's TechJobs App!");
 
         // Allow the user to search until they manually quit
-        while (true) {
+        do {
 
             String actionChoice = getUserSelection("View jobs by:", actionChoices);
 
@@ -68,7 +68,7 @@ public class TechJobs {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
             }
-        }
+        } while (true);
     }
 
     // ﻿Returns the key of the selected item from the choices Dictionary
