@@ -118,7 +118,7 @@ public class JobData {
                 allJobs.add(newJob);
             }
 
-            // flag the data as loaded, so we don't do it twice
+            // flag the data as loaded, to prevent duplication
             isDataLoaded = true;
 
         } catch (IOException e) {
